@@ -1,4 +1,3 @@
-
 CREATE TABLE public.usuarios (
                 id_usuario NUMERIC(38) NOT NULL,
                 email VARCHAR(255) NOT NULL,
@@ -53,13 +52,13 @@ CREATE TABLE public.endereço (
                 rua VARCHAR(255),
                 pais VARCHAR(255) NOT NULL,
                 complemento VARCHAR(255) NOT NULL,
-                usuarios_id_usuario NUMERIC(38) NOT NULL,
+                usuarios_id NUMERIC(38) NOT NULL,
                 CONSTRAINT endere_o_pk PRIMARY KEY (id_endereço)
 );
 
 
 ALTER TABLE public.endereço ADD CONSTRAINT usuarios_endere_o_fk
-FOREIGN KEY (usuarios_id_usuario)
+FOREIGN KEY (usuarios_id)
 REFERENCES public.usuarios (id_usuario)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
